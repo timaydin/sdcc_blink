@@ -15,19 +15,14 @@ INCLUDE := \
 	-I ${BSP_DEVINC} \
 	-I ${BSP_DRVINC}
 
-SRCS := \
+SOURCES := \
 	${BSP_DRVSRC}/common.c \
 	${BSP_DRVSRC}/sys.c \
 	main.c
 
-OBJECTS := \
-	${BSP_DRVSRC}/common.rel \
-	${BSP_DRVSRC}/sys.rel \
-	main.rel
+OBJECTS := $(notdir $(SOURCES:.c=.rel))
 
-OBJECTS := $(notdir $(SRCS:.c=.rel))
-
-vpath %.c ${BSP_DRVSRC} .
+vpath %.c $(dir $(SOURCES))
 
 CC := sdcc -c --model-small --debug -V -D__SDCC__ ${INCLUDE}
 
