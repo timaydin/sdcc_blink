@@ -26,13 +26,13 @@ vpath %.c $(dir $(SOURCES))
 
 CC := sdcc -c --model-small --debug -V -D__SDCC__ ${INCLUDE}
 
-LD := sdcc -mmcs51 --out-fmt-elf --model-small
+LD := sdcc -mmcs51 --out-fmt-ihx --model-small
 
 %.rel: %.c
 	${CC} -c $< -o $@
 
 all: ${OBJECTS}
-	${LD} -o ${PROJECT}.elf ${OBJECTS}
+	${LD} -o ${PROJECT}.ihx ${OBJECTS}
 
 clean:
-	rm -rf *.elf *.lk *.map *.mem *.adb *.asm *.lst *.rel *.rst *.sym
+	rm -rf *.ihx *.lk *.map *.mem *.adb *.asm *.lst *.rel *.rst *.sym
