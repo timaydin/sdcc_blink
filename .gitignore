@@ -1,0 +1,10 @@
+*.elf
+*.lk
+*.map
+*.mem
+*.adb
+*.asm
+*.lst
+*.rel
+*.rst
+*.sym
