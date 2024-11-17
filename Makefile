@@ -26,7 +26,7 @@ vpath %.c $(dir $(SOURCES))
 
 CC := sdcc -c --model-small --debug -V -D__SDCC__ ${INCLUDE}
 
-LD := sdcc --out-fmt-elf --model-small
+LD := sdcc -mmcs51 --out-fmt-elf --model-small
 
 %.rel: %.c
 	${CC} -c $< -o $@
