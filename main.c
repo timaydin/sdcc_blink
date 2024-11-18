@@ -1,6 +1,24 @@
 #include "numicro_8051.h"
 
-int main(void)
+void main(void)
 {
-    return 0;
+    unsigned int i;
+
+    P1M1 = 0x00;
+    P1M2 = 0xFF;
+
+    while (1)
+    {
+        P1 = 0xFF;
+        for (i = 0; i < 20; ++i)
+        {
+            ;
+        }
+
+        P1 = 0x00;
+        for (i = 0; i < 20; ++i)
+        {
+            ;
+        }
+    }
 }
