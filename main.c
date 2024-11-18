@@ -2,7 +2,7 @@
 
 void main(void)
 {
-    unsigned int i;
+    unsigned long i;
 
     P1M1 = 0x00;
     P1M2 = 0xFF;
@@ -10,13 +10,13 @@ void main(void)
     while (1)
     {
         P1 = 0xFF;
-        for (i = 0; i < 20; ++i)
+        for (i = 0; i < 200000; ++i)
         {
             ;
         }
 
         P1 = 0x00;
-        for (i = 0; i < 20; ++i)
+        for (i = 0; i < 200000; ++i)
         {
             ;
         }
